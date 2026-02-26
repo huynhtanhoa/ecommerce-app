@@ -1,9 +1,9 @@
-import {View, Text, TouchableOpacity, Image} from "react-native";
+import { COLORS } from "@/constants";
+import { ProductCardProps } from "@/constants/types";
+import { Ionicons } from "@expo/vector-icons";
+import { Link } from "expo-router";
 import React from 'react';
-import {ProductCardProps} from "@/constants/types";
-import {Link} from "expo-router";
-import {Ionicons} from "@expo/vector-icons";
-import {COLORS} from "@/constants";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 
 export default function ProductCard({product} : ProductCardProps){
@@ -12,7 +12,7 @@ export default function ProductCard({product} : ProductCardProps){
 
     return(
         <Link href={`/product/${product._id}`} asChild>
-            <TouchableOpacity className='w-[48%] mb-4 bg-white rounded-lg overflow-hidden'>
+            <TouchableOpacity className='w-full mb-4 bg-white rounded-lg overflow-hidden'>
                 <View className='relative h-56 w-full bg-gray-100'>
                     <Image source={{uri: product.images[0]}} className='w-full h-full' resizeMode="cover"/>
 
@@ -25,8 +25,8 @@ export default function ProductCard({product} : ProductCardProps){
 
                     {/* is Featured */}
                     {product.isFeatured && (
-                        <View className='absolute top-2 left-2 bg-black px-2 py-1 rounded'>
-                            <Text className='text-white text-sm font-bold uppercase'>Featured</Text>
+                        <View className='absolute top-1 left-1 bg-black px-1 py-1 rounded'>
+                            <Text className='text-white text-xs font-bold uppercase'>Featured</Text>
                         </View>
                     )}
 

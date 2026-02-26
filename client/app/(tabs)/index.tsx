@@ -1,13 +1,13 @@
-import {View, Text, ScrollView, Image, Dimensions, TouchableOpacity, ActivityIndicator} from "react-native";
-import React, { useEffect, useState} from 'react';
-import {SafeAreaView} from "react-native-safe-area-context";
-import Header from "@/components/Header";
-import {BANNERS, dummyProducts} from "@/assets/assets";
-import {useRouter} from "expo-router";
-import {CATEGORIES} from "@/constants";
+import { BANNERS, dummyProducts } from "@/assets/assets";
 import CategoryItem from "@/components/CategoryItem";
-import {Product} from "@/constants/types";
+import Header from "@/components/Header";
 import ProductCard from "@/components/ProductCard";
+import { CATEGORIES } from "@/constants";
+import { Product } from "@/constants/types";
+import { useRouter } from "expo-router";
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Dimensions, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 // get width of the device
@@ -106,11 +106,15 @@ export default function Home(){
                         {loading ? (
                             <ActivityIndicator size='large'/>
                         ) : (
-                            <View className='flex-row flex-wrap justify-between'>
-                                {products.slice(0, 4).map((product) => (
-                                    <ProductCard key={product._id}  product={product} />
-                                ))}
+                            <View className="flex-row flex-wrap">
+                            {products.slice(0, 6).map((product) => (
+                                <View key={product._id} className="w-1/3 px-1 mb-1">
+                                    <ProductCard product={product} />
+                                </View>
+                            ))}
                             </View>
+
+
                         )}
                     </View>
 
