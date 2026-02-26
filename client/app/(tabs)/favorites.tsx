@@ -4,8 +4,11 @@ import React from 'react';
 
 export default function Favorites(){
     return(
-        <View>
-            <Text>Favorites</Text>
-        </View>
+        <>
+            <View>
+                <Text>Favorites</Text>
+            </View>
+        </>
+
     );
 }

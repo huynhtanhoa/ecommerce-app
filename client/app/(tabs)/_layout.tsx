@@ -29,7 +29,7 @@ export default function TabLayout(){
                     <Ionicons name={ focused ? 'home': 'home-outline' } size={26} color={color}/>
             }}/>
 
-            <Tabs.Screen name="card" options={{
+            <Tabs.Screen name="cart" options={{
                 tabBarIcon: ({color, focused}) =>
                     <Feather name={ focused ? 'shopping-cart': 'shopping-cart' } size={26} color={color}/>
             }}/>
